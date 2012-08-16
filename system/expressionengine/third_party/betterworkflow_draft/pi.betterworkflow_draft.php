@@ -8,7 +8,7 @@ $plugin_info = array(
 	'pi_description' => 'Create notes that only show for better workflow drafts or only show on the live site.',
 	'pi_usage' => '# Better Workflow Draft #
 
-Set the HTTP Headers for your template.
+Create notes that only show for better workflow drafts or only show on the live site.
 
 ## Parameters
 
