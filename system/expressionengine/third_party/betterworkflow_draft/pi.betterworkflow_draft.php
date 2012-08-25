@@ -21,11 +21,13 @@ Create notes that only show for better workflow drafts or only show on the live 
 
 ## Examples
 {exp:channel:entries}
+
 {exp:betterworkflow_draft parse="inward"}You are viewing a betterworkflow preview.{/exp:betterworkflow_draft}
 
 {exp:betterworkflow_draft parse="inward" draft="draft"}You are viewing a betterworkflow draft.{/exp:betterworkflow_draft}
 
 {exp:betterworkflow_draft parse="inward" draft="live"}You are viewing on the website.{/exp:betterworkflow_draft}
+
 {/exp:channel:entries}',
 );
 
