@@ -38,7 +38,7 @@ Create notes that only show for better workflow drafts or only show on the live 
  *
  * @author Loren Klingman
  * @link https://github.com/wiseloren/betterworkflow_draft
- * @version 1.1
+ * @version 1.1.1
  *
  * @property CI_Controller $EE
  */
