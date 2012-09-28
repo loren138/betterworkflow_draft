@@ -2,11 +2,11 @@
 
 $plugin_info = array(
 	'pi_name' => 'Better Workflow Draft',
-	'pi_version' => '1.1',
+	'pi_version' => '1.1.1',
 	'pi_author' => 'Loren Klingman',
 	'pi_author_url' => 'https://github.com/wiseloren/betterworkflow_draft',
 	'pi_description' => 'Create notes that only show for better workflow drafts or only show on the live site.',
-	'pi_usage' => '# Better Workflow Draft v1.1 #
+	'pi_usage' => '# Better Workflow Draft #
 
 Create notes that only show for better workflow drafts or only show on the live site.  This must be used inside the exp:channel:entries tag to work properly.
 
@@ -81,8 +81,8 @@ class Betterworkflow_draft
 				}
 				break;
 			default:
-				if ((!isset($this->EE->session->cache['ep_better_workflow']['is_valid_preview_request']) 
-					&& !$this->EE->session->cache['ep_better_workflow']['is_valid_preview_request'])) {
+				if (!isset($this->EE->session->cache['ep_better_workflow']['is_valid_preview_request']) 
+					|| !$this->EE->session->cache['ep_better_workflow']['is_valid_preview_request']) {
 					$this->EE->TMPL->log_item('Better Workflow Draft: Skipping, this is not a better workflow preview.');
 					return '';
 				}

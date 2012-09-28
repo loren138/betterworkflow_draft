@@ -1,4 +1,4 @@
-# Better Workflow Draft v1.1 #
+# Better Workflow Draft #
 
 Create notes that only show for better workflow drafts or only show on the live site.  This must be used inside the exp:channel:entries tag to work properly.
 
@@ -23,7 +23,8 @@ Create notes that only show for better workflow drafts or only show on the live 
 {/exp:channel:entries}
 
 ## Changes
-
+* 1.1.1
+	* Fixed a php error
 * 1.1
 	* Fixed a bug with the way previews are handled and changed the draft parameter values
 	* The default value has changed and is now to show for any preview not just a draft
