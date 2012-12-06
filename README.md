@@ -23,6 +23,11 @@ Create notes that only show for better workflow drafts or only show on the live 
 {/exp:channel:entries}
 
 ## Changes
+* 1.2
+	* Altered preview detection to use BWF 1.5 built in variable
+	* You may now use http://betterworkflow.electricputty.co.uk/documentation/#tags instead of this plugin; however, the plugin may still be useful for ensuring inner tags don't get processed (simple vs advanced conditionals)
+* 1.1.2
+	* Fixed a bug with BWF 1.4 Integration
 * 1.1.1
 	* Fixed a php error
 * 1.1

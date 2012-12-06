@@ -2,7 +2,7 @@
 
 $plugin_info = array(
 	'pi_name' => 'Better Workflow Draft',
-	'pi_version' => '1.1.1',
+	'pi_version' => '1.2',
 	'pi_author' => 'Loren Klingman',
 	'pi_author_url' => 'https://github.com/wiseloren/betterworkflow_draft',
 	'pi_description' => 'Create notes that only show for better workflow drafts or only show on the live site.',
@@ -38,7 +38,7 @@ Create notes that only show for better workflow drafts or only show on the live 
  *
  * @author Loren Klingman
  * @link https://github.com/wiseloren/betterworkflow_draft
- * @version 1.1.1
+ * @version 1.1.2
  *
  * @property CI_Controller $EE
  */
@@ -61,6 +61,7 @@ class Betterworkflow_draft
 		if (!$draft) {
 			$draft = "preview";
 		}
+
 		switch ($draft) {
 			case 'draft':
 			case 'yes':
@@ -72,8 +73,8 @@ class Betterworkflow_draft
 				break;
 			case 'live':
 			case 'no':
-				if ((isset($this->EE->session->cache['ep_better_workflow']['is_valid_preview_request']) 
-					&& $this->EE->session->cache['ep_better_workflow']['is_valid_preview_request']) || 
+				if ((-isset($this->EE->config->_global_vars['is_bwf_preview']) 
+					&& $this->EE->config->_global_vars['is_bwf_preview']) || 
 					(isset($this->EE->session->cache['ep_better_workflow']['is_draft']) 
 					&& $this->EE->session->cache['ep_better_workflow']['is_draft'])) {
 					$this->EE->TMPL->log_item('Better Workflow Draft: Skipping, this is a better workflow draft or preview.');
@@ -81,8 +82,8 @@ class Betterworkflow_draft
 				}
 				break;
 			default:
-				if (!isset($this->EE->session->cache['ep_better_workflow']['is_valid_preview_request']) 
-					|| !$this->EE->session->cache['ep_better_workflow']['is_valid_preview_request']) {
+				if (!isset($this->EE->config->_global_vars['is_bwf_preview']) 
+					|| !$this->EE->config->_global_vars['is_bwf_preview']) {
 					$this->EE->TMPL->log_item('Better Workflow Draft: Skipping, this is not a better workflow preview.');
 					return '';
 				}
